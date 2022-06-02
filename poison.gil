@@ -3,5 +3,82 @@
 
 sequence construct
 {
-    //The construct's source code should be placed here. Feel free to call other sequences and operations defined in this file.
+    JustProduceCyanide
 }
+
+//Where you define sequences doesn't matter
+sequence JustProduceCyanide
+{
+    //Just produce the cyanide synthase genes
+    .DefaultPromoter
+    {
+        HcnA
+    }
+
+    .DefaultPromoter
+    {
+        HcnB
+    }
+
+    .DefaultPromoter
+    {
+        HcnC
+    }
+}
+
+
+//_______________________________________________________________________________________________________________
+// The raw genes
+//_______________________________________________________________________________________________________________
+
+
+//Cyanide stuff
+
+//Pseudomonas aeruginosa cyanide synthase A subunit
+sequence HcnA
+{
+    //Amino acids should be enclosed in @ symbols
+    @MHLLERQHDIQPLSRADMTIHLNGQPVAAAAGETVLNVLNAVGLRRLARNDHGQASGAFCGMGVCHCCLVAIDGRPKRRACQTVVRPGMRVETESNRFDQEERP@
+}
+
+//Pseudomonas aeruginosa cyanide synthase B subunit
+sequence HcnB
+{
+    @MNLRPVIVGGGSAGMAAAIELARRGVPCVLFDEASRPGGVVYRGPLRAGVDPAYLGARYTRMLEKLRRDFSACAGHIDLRLNSRVVGGDGQRLMVLDEAERLHEVEYSH
+    LLLATGCHERSVPFPGWTLPGVMLLGGLQLQIKSGVVKPLGDTLIAGSGPLLPLVACQLHAAGVRVAGVYEACAFGRMARESLALLNKPQLFLDGLSMLGYLKLNGIPLH
+    YGWGVVEASGDGELTEVTVAPYDEEWRPDLENARPVKASTLAVGYGFIPRTQLSQQLGLEHGFSDDGYLRAECNVWQQSSQPHIHLAGDMAGIRGGEAAMIGGRIAALSI
+    LLQREAIAPAEAIERRESHLARLEAIKRFRAGVERYTQRGARQVELARADTVICRCEQVTRGDIERALEQGVQDIAGLKMRTRAGMGDCQGRMCIGYCSDRLRRATGRHD
+    VGWLRPRFPIDPIPFSAFQNLGTEA@
+}
+
+//Pseudomonas aeruginosa cyanide synthase C subunit
+sequence HcnC
+{
+    @MNRTYDIVIAGGGVIGASCAYQLSRRGNLRIAVVDDKRPGNATRASAGGLWAIGESVGLGCGVIFFRMMSSRNRREAQGAAVAVDASTPHILPPAFFDLALQSNALYPE
+    LHRELIERHGMDFKFERTGLKYVIQDDEDRQYAEHIVAQIPHLAEQVRWLDREELRRAEPAVSHAAHGALEFLCDHQVSPFRLADAYLEAARQNGVELLPGTNVTGVLRQ
+    GRRISGVRTDNAGVLHCRTLINAAGAWAAELSEMATGRRIPVKPVKGQIVLTERMPRLLNGCLTTSDCYMAQKDNGEILIGSTTEDKGFDVSNTFPEIAGLVQGAVRCVP
+    ELQQVNLKRTWAGLRPGSPDELPILGPVAEVEGYLNACGHFRTGILTSAITGVLLDRLVHEETLPLDIAPFLAARFQPEPAAVAVAAC@
+}
+
+
+//Promoters (TBD)
+
+//An operation is just a sequence with an implicit $InnerCode parameter. Call it using .OpName and put the innercode 
+//in curly braces
+operation DefaultPromoter
+{
+    //TBD
+    $InnerCode
+    //TBD
+}
+
+/*
+I could have just wrote the following:
+sequence DefaultPromoter($InnerCode)
+{
+    //TBD
+    $InnerCode
+    //TBD
+}
+*/
+*/
