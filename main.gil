@@ -1,0 +1,22 @@
+//This file is a main build script that links all the subconstructs together. Don't edit this file unless 
+//you know what you're doing.
+
+import "poison"
+import "angiogenesis"
+import "prodrug"
+import "SelfDestruct"
+import "CancerIdentifier"
+import "DeathAndAptamers"
+import "cytokines"
+
+
+sequence main
+{
+    poison::construct
+    angiogenesis::construct
+    prodrug::construct
+    SelfDestruct::construct
+    CancerIdentifier::construct
+    DeathAndAptamers::construct
+    cytokines::construct
+}
