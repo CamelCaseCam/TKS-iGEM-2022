@@ -1,9 +1,36 @@
 //This file should contain any source code related to the poison subconstruct
 
 
+import "ExpressionLocation"
+
 sequence construct
 {
-    JustProduceCyanide
+    TrojanHorseSaporin
+}
+
+
+sequence TrojanHorseSaporin
+{
+    /*
+    This is one way we could do this. Because saporin only affects eukaryotes, we could produce it in the bacteria and let it 
+    build up. Some of it will diffuse out and might hurt nearby cells, but most of it will be trapped. Once the bacteria gets 
+    absorbed by the cell, the saporin will be released. If even a couple of molecules of it get into the cytoplasm of the cancer 
+    cell, the cell will die. 
+    */
+    ExpressionLocation:: .LocalExpressionInCells
+    {
+        Saporin
+    }
+}
+
+
+
+sequence DumbSaporin
+{
+    .DefaultPromoter
+    {
+        Saporin
+    }
 }
 
 //Where you define sequences doesn't matter
@@ -81,4 +108,17 @@ sequence DefaultPromoter($InnerCode)
     //TBD
 }
 */
-*/
+
+
+//_______________________________________________________________________________________________________________
+// Saporin stuff
+//_______________________________________________________________________________________________________________
+
+sequence Saporin
+{
+    //I think this should work...
+    @DPNLKYGGTDIAVIGPPSRDKFLRLNFQSSRGTVSLGLKRENLYVVAYLAMDNANVNRAY
+    YFGTEITSAELTTLLPEATVANQKALEYTEDYQSIEKNAKITEGDKTRKELGLGINLLST
+    LMDAVNKKARVVKNEARFLLIAIQMTAEAARFRYIQNLVTKNFPNKFNSEDKVIQFQVNW
+    SKISKAIYGDAKNGVFNKDYDFGFGKVRQVKDLQMGLLMYLGTTPNNAADRYRAEL@
+}

@@ -1,0 +1,138 @@
+/*
+This library contains promoters to express genes locally or via bactofection. This library assumes that the target organism for
+bactofection is human cancer cells and the target organism for local expression is b. longum
+*/
+
+import "Human"
+
+
+operation LocalExpressionInColonies
+{
+    //This operation will only express genes in the colonies of the target organism (uses quorum sensing)
+    //You must include the AllowQuorumSensing and SendQuorumSignal operations if you're using this operation (They'll be 
+    //included in the build script)
+
+    .P_LuxR
+    {
+        Human::KozakSequence
+        @GGGxxxxx@
+        $InnerCode
+    }
+}
+
+
+operation LocalExpressionInColonies_SD
+{
+    //Like the above operation, but also includes a shine-dalgarno sequence
+    .P_LuxR
+    {
+        Human::KozakSequence
+        @GGGxxxxx@
+
+        ShineDalgarnoSeq
+        'AATAAACAA'
+
+        $InnerCode
+    }
+}
+
+
+
+operation LocalExpressionInCells
+{
+    //Kozak sequence followed by stop codons to stop transcription in eukaryotes (just in case)
+    .B_Longum_Promoter
+    {
+        Human::KozakSequence
+        @GGGxxxxx@
+        $InnerCode
+    }
+}
+
+
+operation Bactofection
+{
+    
+}
+
+
+
+//______________________________________________________________________________________________________________________
+// Actual genes
+//______________________________________________________________________________________________________________________
+
+sequence ShineDalgarnoSeq
+{
+    'AGAAAGGAG'
+}
+
+sequence Terminator
+{
+
+}
+
+operation B_Longum_Promoter
+{
+    //Promoter stuff here
+    $InnerCode
+    //Promoter stuff here
+}
+
+
+//From http://parts.igem.org/Featured_Parts:Cell-Cell-Signaling
+
+sequence AllowQuorumDetection
+{
+    .LocalExpressionInCells
+    {
+        ShineDalgarnoSeq
+        'AATAAACAA'
+        LuxR
+    }
+}
+
+
+
+sequence SendQuorumSignal
+{
+    .LocalExpressionInCells
+    {
+        ShineDalgarnoSeq
+        'AATAAACAA'
+        LuxI
+    }
+}
+
+sequence LuxI
+{
+    //From http://parts.igem.org/Part:BBa_C0061
+    'atgactataatgataaaaaaatcggattttttggcaattccatcggaggagtataaaggtattctaagtcttcgttatcaagtgtttaagcaaagacttgagtgggacttagttgtagaaaat
+    aaccttgaatcagatgagtatgataactcaaatgcagaatatatttatgcttgtgatgatactgaaaatgtaagtggatgctggcgtttattacctacaacaggtgattatatgctgaaaagtg
+    tttttcctgaattgcttggtcaacagagtgctcccaaagatcctaatatagtcgaattaagtcgttttgctgtaggtaaaaatagctcaaagataaataactctgctagtgaaattacaatgaa
+    actatttgaagctatatataaacacgctgttagtcaaggtattacagaatatgtaacagtaacatcaacagcaatagagcgatttttaaagcgtattaaagttccttgtcatcgtattggagac
+    aaagaaattcatgtattaggtgatactaaatcggttgtattgtctatgcctattaatgaacagtttaaaaaagcagtcttaaatgctgcaaacgacgaaaactacgctttagtagcttaataac
+    tctgatagtgctagtgtagatctc'
+}
+
+
+
+//The reciever code
+sequence LuxR
+{
+    //From http://parts.igem.org/Part:BBa_C0062
+    'atgaaaaacataaatgccgacgacacatacagaataattaataaaattaaagcttgtagaagcaataatgatattaatcaatgcttatctgatatgactaaaatggtacattgtgaatattat
+    ttactcgcgatcatttatcctcattctatggttaaatctgatatttcaatcctagataattaccctaaaaaatggaggcaatattatgatgacgctaatttaataaaatatgatcctatagtag
+    attattctaactccaatcattcaccaattaattggaatatatttgaaaacaatgctgtaaataaaaaatctccaaatgtaattaaagaagcgaaaacatcaggtcttatcactgggtttagttt
+    ccctattcatacggctaacaatggcttcggaatgcttagttttgcacattcagaaaaagacaactatatagatagtttatttttacatgcgtgtatgaacataccattaattgttccttctcta
+    gttgataattatcgaaaaataaatatagcaaataataaatcaaacaacgatttaaccaaaagagaaaaagaatgtttagcgtgggcatgcgaaggaaaaagctcttgggatatttcaaaaatat
+    taggttgcagtgagcgtactgtcactttccatttaaccaatgcgcaaatgaaactcaatacaacaaaccgctgccaaagtatttctaaagcaattttaacaggagcaattgattgcccatactt
+    taaaaattaataacactgatagtgctagtgtagatcac'
+}
+
+operation P_LuxR
+{
+    //From http://parts.igem.org/Part:BBa_R0062
+    'acctgtaggatcgtacaggtttacgcaagaaaatggtttgttatagtcgaataaa'
+    $InnerCode
+    Terminator
+}

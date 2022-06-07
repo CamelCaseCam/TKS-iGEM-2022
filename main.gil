@@ -1,6 +1,8 @@
 //This file is a main build script that links all the subconstructs together. Don't edit this file unless 
 //you know what you're doing.
 
+import "ExpressionLocation"
+
 import "poison"
 import "angiogenesis"
 import "prodrug"
@@ -12,6 +14,11 @@ import "cytokines"
 
 sequence main
 {
+    //Remove this if we don't use quorum sensing
+    ExpressionLocation::AllowQuorumDetection
+    ExpressionLocation::SendQuorumSignal
+
+
     poison::construct
     angiogenesis::construct
     prodrug::construct
