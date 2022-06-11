@@ -136,3 +136,34 @@ operation P_LuxR
     $InnerCode
     Terminator
 }
+
+//enhancer+promoter for eukaryotic tumor cell(CMV)
+sequence enhancer_euk
+{
+    //From https://www.snapgene.com/resources/plasmid-files/?set=basic_cloning_vectors&plasmid=CMV_promoter 
+    'gtggagtatttacggtaaactgcccacttggcagtacatcaagtgtatcatatgccaagtacgccccctattgacgtcaatgacggtaaatggcccgcctggcattatgcccagtacatgacc
+    ttatgggactttcctacttggcagtacatctacgtattagtcatcgctattaccatg'
+}
+sequence Promoter_euk
+{
+    //From https://www.snapgene.com/resources/plasmid-files/?set=basic_cloning_vectors&plasmid=CMV_promoter 
+    'gtgatgcggttttggcagtacatcaatgggcgtggatagcggtttgactcacggggatttccaagtctccaccccattgacgtcaatgggagtttgttttggcaccaaaatcaacgggacttt
+    ccaaaatgtcgtaacaactccgccccattgacgcaaatgggcggtaggcgtgtacggtgggaggtctatataagcagagct'
+}
+
+//promoter for bifidobacterium longum
+sequence Promoter_pro
+{
+    //From https://pubmed.ncbi.nlm.nih.gov/22923113/ 
+    'tgaagtgtgtcgtgtggcgttgcgaaatgtcaaaggtggcgttatcatagaggattgttgtgtttccctaaggggtccttcaaagcgctttcccactcgccatcgaggactttcagggagccca
+    cggataatgaggccgaaaccgccaagcctgaccagcgcggcagtccaagcccggaacacaataagcaagaaaaggtacacca'
+}
+
+//terminator for eukaryotic tumor cell
+sequence Terminator_euk
+
+//terminator for bifidobacterium longum
+sequence Terminator_pro
+{
+
+}
