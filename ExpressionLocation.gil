@@ -159,11 +159,18 @@ sequence Promoter_pro
     cggataatgaggccgaaaccgccaagcctgaccagcgcggcagtccaagcccggaacacaataagcaagaaaaggtacacca'
 }
 
-//terminator for eukaryotic tumor cell
+//terminator for eukaryotic tumor cell(SV40 polyA)
 sequence Terminator_euk
+{
+    //From http://parts.igem.org/wiki/index.php?title=Part:BBa_K678012#
+    'attccgataacttgtttattgcagcttataatggttacaaataaagcaatagcatcacaaatttcacaaataaagcatttttttcactgcattctagttgtggtttgtccaaactcatcaatgt
+    atcttatcatgtctg
+}
 
-//terminator for bifidobacterium longum
+//terminator for bifidobacterium longum(E.coli terminator)
 sequence Terminator_pro
 {
-
+    //From http://parts.igem.org/Part:BBa_B0015 
+    'ccaggcatcaaataaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttgtcggtgaacgctctctactagagtcacactggctcaccttcgggtgggcctttctgcgt
+    ttata'
 }
