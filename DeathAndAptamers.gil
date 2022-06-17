@@ -1,30 +1,13 @@
 //This file should contain any source code related to the death receptor/aptamer subconstruct
 
-<<<<<<< HEAD
 import "ExpressionLocation"
-sequence construct
-{
-    //The construct's source code should be placed here. Feel free to call other sequences and operations defined in this file.
-}
 
-
-//aptamer sequence that targets epidermal growth factor receptor
-sequence Tutu22
-{
-    //From https://pubmed.ncbi.nlm.nih.gov/25242523/ 
-    'taccagtgcgatgctcagtgccgtttcttctctttcgctttttttgcttttgagcatgctgacgcattcggttgac' 
-
-}
-sequence death_receptor
-{
-    //
-=======
 using "regulation"
 
 sequence construct
 {
     //The construct's source code should be placed here. Feel free to call other sequences and operations defined in this file.
-    Example_shRNA
+    DcR3_shRNA
 }
 
 sequence Example_shRNA
@@ -35,5 +18,22 @@ sequence Example_shRNA
         'ATGAAAAAAATTTTTTTTTTTTTTTTTTTTTTTTTTTCCCCCCCCCCCCCCCCCC'
     }
     #endRegion
->>>>>>> d1ecae149551b5490dabf0bb35517864bad3ed44
+}
+
+sequence DcR3_shRNA
+{
+    #region "DcR3_shRNA"
+    regulation:: .Gen_shRNASequence
+    {
+        @MRALEGPGLSLLCLVLALPALLPVPAVRGVAETPTYPWRDAETGERLVCAQCPPGTFVQRPCRRDSPTTCGPCPPRHYTQFWNYLERCRYCNVLCGEREEEARACHATHNR
+        ACRCRTGFFAHAGFCLEHASCPPGAGVIAPGTPSQNTQCQPCPPGTFSASSSSSEQCQPHRNCTALGLALNVPGSSSHDTLCTSCTGFPLSTRVPGAEECERAVIDFVAFQD
+        ISIKRLQRLLQALEAPEGWGPTPRAGRAALQLKLRRRLTELLGAQDGALLVRLLQALRVARMPGLERSVRERFLPVH@
+    }
+}
+//aptamer sequence that targets epidermal growth factor receptor
+sequence Tutu22
+{
+    //From https://pubmed.ncbi.nlm.nih.gov/25242523/ 
+    'taccagtgcgatgctcagtgccgtttcttctctttcgctttttttgcttttgagcatgctgacgcattcggttgac' 
+
 }
