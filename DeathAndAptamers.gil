@@ -6,7 +6,7 @@ using "regulation"
 
 sequence construct
 {
-    DcR3
+    silenced_DcR3
     Tutu22
 }
 
@@ -21,11 +21,9 @@ sequence construct
 }
 */
 
-
 sequence silenced_DcR3
 {
-    /* Death receptors are what allow for immune cells to bind to diseased/injured cells and allows for mediated apoptosis
-.      However, decoy receptors are able to similarly bind to the ligands of immune cells but they do not lead to the 
+    /* Death receptors are what allow for immune cells to bind to diseased/injured cells and allows for mediated apoptosis      However, decoy receptors are able to similarly bind to the ligands of immune cells but they do not lead to the 
        expected apoptosis. Moreover, the decoy receptor appears to be overexpressed in cancer cells, therefore limiting its
        expression could make it easier for immune cells to kill cancer cells. 
     */
