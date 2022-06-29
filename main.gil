@@ -21,9 +21,9 @@ sequence main
 
     poison::construct
     angiogenesis::construct
-    prodrug::construct
+    //prodrug::construct
     SelfDestruct::construct
-    CancerIdentifier::construct
-    DeathAndAptamers::construct
-    cytokines::construct
+    //CancerIdentifier::construct
+    //DeathAndAptamers::construct
+    //cytokines::construct
 }
