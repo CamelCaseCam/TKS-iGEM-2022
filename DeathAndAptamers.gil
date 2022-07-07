@@ -7,7 +7,7 @@ using "regulation"
 sequence construct
 {
     silenced_DcR3
-    Tutu22
+    E07
 }
 
 /*sequence Example_shRNA
@@ -33,11 +33,11 @@ sequence silenced_DcR3
     }
 }
 
-sequence Tutu22
+sequence E07
 {
     ExpressionLocation:: .LocalExpressionInCells
     {
-        Tutu22_aptamer
+        E07_aptamer
     }
 }
 
@@ -54,9 +54,9 @@ sequence DcR3_shRNA
 }
 
 //aptamer sequence that targets epidermal growth factor receptor
-sequence Tutu22_aptamer
+sequence E07_aptamer
 {
     //From https://pubmed.ncbi.nlm.nih.gov/25242523/ 
-    'taccagtgcgatgctcagtgccgtttcttctctttcgctttttttgcttttgagcatgctgacgcattcggttgac' 
+    'ACGGCGATATTACGTGCCTAAATTAGCGGCATCTTTTCGTACAGTTTCGGC' 
 
 }
