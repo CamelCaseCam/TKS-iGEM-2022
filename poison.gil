@@ -12,12 +12,11 @@ sequence construct
 sequence TrojanHorseSaporin
 {
     /*
-    This is one way we could do this. Because saporin only affects eukaryotes, we could produce it in the bacteria and let it 
-    build up. Some of it will diffuse out and might hurt nearby cells, but most of it will be trapped. Once the bacteria gets 
-    absorbed by the cell, the saporin will be released. If even a couple of molecules of it get into the cytoplasm of the cancer 
-    cell, the cell will die. 
+    This is one way we could do this. We use a special construct to make the saporin mRNA be produced in prokaryotes but only 
+    translated in human cells. This way, the mRNA will build up and be ready as it's delivered into the human cell. This needs to
+    be done to prevent the saporin from negatively affecting the bacteria delivering the toxin
     */
-    ExpressionLocation:: .LocalExpressionInCells
+    ExpressionLocation:: .Bactofection
     {
         Saporin
     }

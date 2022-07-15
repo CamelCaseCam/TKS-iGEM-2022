@@ -26,8 +26,11 @@ operation LocalExpressionInColonies_SD
     //Like the above operation, but also includes a shine-dalgarno sequence
     .P_LuxR
     {
-        Human::KozakSequence
-        @GGGxxxxx@
+        for "Human"
+        {
+            Human::KozakSequence
+            @GGGxxxxx@
+        }
 
         ShineDalgarnoSeq
         'AATAAACAA'
@@ -44,15 +47,55 @@ operation LocalExpressionInCells
     .B_Longum_Promoter
     {
         Human::KozakSequence
-        @GGGxxxxx@
+        for "Human"
+        {
+            @GGGxxxxx@
+        }
+
         $InnerCode
     }
 }
 
+operation ExpressionInCancerCells => Bactofection
 
+//CMV also works in bacteria, so we'll have to add something to block that
 operation Bactofection
 {
-    
+    enhancer_euk
+
+    //This should terminate translation in bacteria
+    ShineDalgarnoSeq
+    'AATAAACAA'
+
+    for "B.longum"
+    {
+        @GGGxxxxx@
+    }
+
+    $InnerCode
+    Terminator_euk
+}
+
+
+//Operation to transcribe in bacteria but translate in eukaryotes
+operation mRNAActiveInEukaryotes
+{
+    //mRNA is transcribed in bacteria
+    .B_Longum_Promoter
+    {
+        //Stop translation in bacteria
+        ShineDalgarnoSeq
+        'AATAAACAA'
+        for "B.longum"
+        {
+            @GGGxxxxx@
+        }
+
+        //Initiate translation in eukaryotes
+        Human::KozakSequence
+
+        $InnerCode
+    }
 }
 
 
@@ -73,9 +116,9 @@ sequence Terminator
 
 operation B_Longum_Promoter
 {
-    //Promoter stuff here
+    Promoter_pro
     $InnerCode
-    //Promoter stuff here
+    Terminator_pro
 }
 
 
@@ -164,7 +207,7 @@ sequence Terminator_euk
 {
     //From http://parts.igem.org/wiki/index.php?title=Part:BBa_K678012#
     'attccgataacttgtttattgcagcttataatggttacaaataaagcaatagcatcacaaatttcacaaataaagcatttttttcactgcattctagttgtggtttgtccaaactcatcaatgt
-    atcttatcatgtctg
+    atcttatcatgtctg'
 }
 
 //terminator for bifidobacterium longum(E.coli terminator)

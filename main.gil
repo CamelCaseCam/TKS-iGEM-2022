@@ -1,6 +1,8 @@
 //This file is a main build script that links all the subconstructs together. Don't edit this file unless 
 //you know what you're doing.
 
+#target "B.longum"
+
 import "ExpressionLocation"
 
 import "poison"
@@ -20,10 +22,10 @@ sequence main
 
 
     poison::construct
-    angiogenesis::construct
+    //angiogenesis::construct
     //prodrug::construct
     SelfDestruct::construct
     //CancerIdentifier::construct
-    //DeathAndAptamers::construct
+    DeathAndAptamers::construct
     //cytokines::construct
 }
